@@ -1,7 +1,15 @@
 const   calcDisplay = document.querySelector(".display");
+const   container = document.querySelector(".container");
+const   calcButtons = [...document.querySelectorAll(".btn")];
 let     result = document.querySelector(".result");
 
-calcDisplay.textContent = result.textContent;
+
+for (const button of calcButtons )
+{
+    button.addEventListener("click", ()=>{
+        calcDisplay.textContent += button.textContent;
+    });
+}
 
 function    sum( number1, number2 )
 {
