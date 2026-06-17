@@ -72,12 +72,13 @@ body { background-color: #949494; }
     margin: 7px 0 20px;
     padding: 30px 20px;
     background-color: #377c3aca;
-    border-radius: 5px;
     overflow: auto;
     text-align: right;
     font-family: "digital7";
     font-size: 1.5em;
     line-height: 3px;
+    border: 1px solid #515151;
+    border-radius: 5px;
     box-shadow: inset 1px 2px 5px 5px rgb(32, 69, 35);
 }
 
