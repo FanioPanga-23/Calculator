@@ -26,16 +26,21 @@ for (const button of calcButtons )
     });
 }
 
-// function    parsingInput(input)
-// {
-//     for (let i = 0; i < input.length; i++)
-//     {
-//         if (isOperator(input[i]))
-//         {
-//             if (n1.length === 0)
-//         }
-//     }
-// }
+function    parsingInput(input)
+{
+    
+}
+
+function    findOperator()
+{
+    let     i = 0;
+
+    while (!isOperator(input[i]))
+        i++;
+    if (isOperator(input[i]))
+        return (i);
+    return ( undefined );
+}
 
 function    errorMsg()
 {
