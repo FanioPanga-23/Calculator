@@ -4,20 +4,52 @@ const   calcButtons = [...document.querySelectorAll(".btn")];
 let     result = document.querySelector(".result");
 let     n1 = "";
 let     n2 = "";
-let     total = "";
+let     operator = "";
 
 for (const button of calcButtons )
 {
     button.addEventListener("click", ()=>{
-        if ( isOperator( button.textContent) )
-            alert("Operator: " + button.textContent);
-        if (button.textContent.toLocaleLowerCase() === 'c')
+        if (isDisplayble(button.textContent))
         {
-            clearDisplay();
+            if ( isOperator( button.textContent ) )
+            {
+                if (!isOperator(calcDisplay.textContent.at(-1)))
+                    calcDisplay.textContent += button.textContent;
+            }
+            else
+                calcDisplay.textContent += button.textContent;
         }
-        if (button.textContent.toLocaleLowerCase() !== 'c')
-            calcDisplay.textContent += button.textContent;
+        if (button.textContent.toLocaleLowerCase() === 'c')
+            clearDisplay();
+        if (button.textContent === "=")
+            parsingInput(calcDisplay.textContent);
     });
+}
+
+// function    parsingInput(input)
+// {
+//     for (let i = 0; i < input.length; i++)
+//     {
+//         if (isOperator(input[i]))
+//         {
+//             if (n1.length === 0)
+//         }
+//     }
+// }
+
+function    errorMsg()
+{
+    calcDisplay.textContent = "Malformed expression";
+}
+
+function    canCalc(num1, num2)
+{
+    return (num1.length > 0 && num2.length > 0);
+}
+
+function    isDisplayble(char)
+{
+    return (char.toLocaleLowerCase() !== 'c' && char !== "=");
 }
 
 function    clearDisplay()
@@ -44,6 +76,11 @@ function    sub( number1, number2 )
 
 function    division( number1, number2 )
 {
+    if (number1 === 0 && number2 === 0)
+    {
+        calcDisplay.textContent = "Division by zero is undefined";
+        return;
+    }
     return ( number1 / number2 );
 }
 

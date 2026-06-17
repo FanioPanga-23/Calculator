@@ -1,8 +1,16 @@
+@font-face {
+    font-family: "digital7";
+    src: url(../fonts/digital-7/digital-7\ \(mono\).ttf);
+    font-weight: bold;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+body { background-color: #949494; }
 
 .container {
     display: flex;
@@ -32,21 +40,18 @@
     font-size: 1.2em;
     font-weight: bold;
     text-align: center;
-    border: 2px solid #515151;
+    border: 3px solid #515151;
     border-radius: 5px;
     background-color: #000;
     color: #F2F2F2;
-}
-
-.btn:hover {
-    cursor: pointer;
-    border-right: 2px solid #383838;
-    border-bottom: 2px solid #383838;
     box-shadow: 2px 1px 3px #000;
 }
+
+.btn:hover { cursor: pointer; }
+
 .btn:active {
     transform: scale(0.9);
-    border-color: #000;
+    border: 3px solid #515151a1;
 }
 
 .special {
@@ -68,5 +73,15 @@
     padding: 30px 20px;
     background-color: #377c3aca;
     border-radius: 5px;
+    overflow: auto;
+    text-align: right;
+    font-family: "digital7";
+    font-size: 1.5em;
+    line-height: 3px;
     box-shadow: inset 1px 2px 5px 5px rgb(32, 69, 35);
+}
+
+.display::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
 }
