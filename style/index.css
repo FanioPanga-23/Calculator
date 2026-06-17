@@ -77,7 +77,7 @@ body { background-color: #949494; }
     font-family: "digital7";
     font-size: 1.5em;
     line-height: 3px;
-    border: 1px solid #515151;
+    border: 1px solid #000;
     border-radius: 5px;
     box-shadow: inset 1px 2px 5px 5px rgb(32, 69, 35);
 }
